@@ -1,0 +1,145 @@
+/* General */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+section { padding: 4rem 1rem; text-align: center; }
+
+/* Navbar */
+.navbar {
+  display: flex; justify-content: space-between; align-items: center;
+  background: hsl(208, 97%, 57%); color: white; padding: 1rem 2rem; position: sticky; top: 0;
+}
+.navbar ul { list-style: none; display: flex; gap: 1rem; }
+.navbar a { color: white; text-decoration: none; }
+.nav-buttons { display: flex; gap: .5rem; }
+#darkModeToggle,#menuToggle { padding: .4rem .8rem; border: none; border-radius: 5px; cursor: pointer; }
+
+/* Hero */
+.hero {
+  height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+  background: linear-gradient(135deg,hsl(264, 19%, 95%),#2575fc); color: white;
+}
+.hero h1 { font-size: 2.5rem; }
+.hero p { margin: 1rem 0; }
+
+/* Skills */
+.skill-card { margin:1rem auto; max-width:400px; text-align:left; }
+.skill-bar { width:100%; background:#ddd; border-radius:20px; }
+.skill-fill { height:15px; background:#2575fc; border-radius:20px; }
+
+/* Projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 1rem;
+}
+.project-card {
+  background: white; padding:1.5rem; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+.project-card .btn { display:inline-block; margin-top:1rem; }
+
+/* Dark Mode */
+body.dark { background:#121212; color:#eee; }
+body.dark .navbar { background:#1e1e1e; }
+body.dark .hero { background: linear-gradient(135deg,#000,#333); }
+body.dark .project-card { background:#1e1e1e; color:#eee; }
+
+
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 1rem;
+}
+.achievements-card {
+  background: white; padding:1.5rem; border-radius:12px; box-shadow:0 4px 10px rgba(243, 238, 238, 0.1);
+}
+.achievements-card .btn { display:inline-block; margin-top:1rem; }
+
+/* Dark Mode */
+body.dark { background:#121212; color:#eee; }
+body.dark .navbar { background:#1e1e1e; }
+body.dark .hero { background: linear-gradient(135deg,#000,#333); }
+body.dark .achievements-card { background:#1e1e1e; color:#eee; }
+
+/* 📱 Responsive Design for Tablets */
+@media (max-width: 768px) {
+  /* Navbar → turn into column */
+  .navbar ul {
+    flex-direction: column;
+    background: #2575fc;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    display: none;
+    padding: 1rem 0;
+  }
+  .navbar ul.show {
+    display: flex;
+  }
+
+  /* Hero text smaller */
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+
+  /* Sections smaller padding */
+  section { padding: 2rem 1rem; }
+
+  /* Cards full width */
+  .skill-card, .project-card {
+    max-width: 100%;
+  }
+}
+
+/* 📱 Extra Small Screens (Mobile Phones) */
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.6rem; }
+  .hero p { font-size: 0.9rem; }
+  .btn { padding: 0.5rem 1rem; font-size: 0.9rem; }
+}
+
+.profile1jpg-photo {
+  width: 500;          /* size of the photo */
+  height: 300px;
+  border-radius: 50%;    /* circular shape */
+  display: block;        /* makes margin auto work */
+  margin: 0 auto 20px;   /* centers it and adds space below */
+  border: 3px solid #f3e3e3; /* optional border for style */
+}
+
+.sql-example {
+  background-color: #f4f4f4;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  overflow-x: auto;
+}
+
+.sql-example h4 {
+  margin-bottom: 8px;
+}
+
+/* Extra fix for navbar z-index on small screens */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    background: #2575fc;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    display: none;
+    padding: 1rem 0;
+    z-index: 1000; /* keep it above hero section */
+  }
+  .navbar ul.show {
+    display: flex;
+  }
+}
